@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "123776313824",
+    "project_id": "menu-ar-52c3a",
+    "storage_bucket": "menu-ar-52c3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123776313824:android:9aece89394cc7adcd26385",
+        "android_client_info": {
+          "package_name": "com.brixitstudio.menu_ar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123776313824-0juvm3t9fql0ulfb97vsec330gjr9poe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brixitstudio.menu_ar",
+            "certificate_hash": "91bb5bdb1c51e78963f0502540d482aea299b873"
+          }
+        },
+        {
+          "client_id": "123776313824-jfo6bced2dgkqk7a70c3nsb1591ppgh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDykqL8dM69Nf8GoLkR-bCBVj6o9v6gjYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123776313824-jfo6bced2dgkqk7a70c3nsb1591ppgh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
