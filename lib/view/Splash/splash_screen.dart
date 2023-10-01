@@ -7,6 +7,8 @@ import 'package:menu_ar/view/Home/home_screen.dart';
 import 'package:menu_ar/viewModel/auth_view_model.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../utills/App Routes/app_routes.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -19,15 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(milliseconds: 5000), () {
-      if(AuthViewModel().user != null){
-        Navigator.of(context).push(
-          PageTransition(child: const HomeScreen(), type: PageTransitionType.fade),
-        );
-      }else{
-        Navigator.of(context).push(
-          PageTransition(child: LoginScreen(), type: PageTransitionType.fade),
-        );
-      }
+      Navigator.pushNamed(context, AppRoutes.loginScreen);
     });
   }
 

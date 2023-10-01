@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
               splashColor: Utils.primaryLightColor,
               highlightColor: Colors.transparent,
               onTap: () {
-                authViewModel.signInWithGoogle();
+                authViewModel.signInWithGoogle(context: context);
               },
               child: Container(
                 width: width / 3,

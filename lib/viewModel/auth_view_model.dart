@@ -1,9 +1,12 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:menu_ar/model/user_model.dart';
 import 'package:menu_ar/services/firebase_services.dart';
+import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
 
 class AuthViewModel extends GetxController{
@@ -18,7 +21,7 @@ class AuthViewModel extends GetxController{
     super.onInit();
   }
 
-  Future<String> signInWithGoogle() async {
+  Future<String> signInWithGoogle({required BuildContext context}) async {
     String retVal = "Error";
     GoogleSignIn googleSignIn = GoogleSignIn(
       scopes: [
@@ -45,7 +48,7 @@ class AuthViewModel extends GetxController{
         user.phoneNum = authResult.user!.phoneNumber;
         FirebaseServices().createNewUser(user);
       }
-      await Get.to(() => const HomeScreen());
+      await Navigator.pushNamed(context, AppRoutes.bottomAppBarScreen);
       retVal = "Success";
     } catch (e) {
       if (kDebugMode) {
