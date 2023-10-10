@@ -18,7 +18,7 @@ class AppRoutes {
     splashScreen: (context) => const SplashScreen(),
     loginScreen: (context) => LoginScreen(),
     bottomAppBarScreen: (context) => const CustomNavigationBar(),
-    homeScreen: (context) => const HomeScreen(),
+    homeScreen: (context) => HomeScreen(),
     profileScreen: (context) => ProfileScreen(currentUserID: FirebaseAuth.instance.currentUser!.uid),
   };
 }

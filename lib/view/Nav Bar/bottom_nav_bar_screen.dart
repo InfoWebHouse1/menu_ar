@@ -18,7 +18,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
 
   List<Widget> _buildScreens() {
     return [
-      const HomeScreen(),
+      HomeScreen(),
       ProfileScreen(currentUserID: FirebaseAuth.instance.currentUser!.uid,),
     ];
   }
