@@ -59,6 +59,7 @@ dependencies:
   page_transition: any
   persistent_bottom_nav_bar_v2: any
   shimmer: any
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

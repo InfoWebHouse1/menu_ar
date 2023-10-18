@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Utils {
-
+  /// google APi
+  static const googleApiKey = "AIzaSyBKZIi4t2Am1SdHAqNQD58B1m-uLA69mtE";
   ///Firebase Document Ref
   final userRef = FirebaseFirestore.instance.collection("Users");
 
