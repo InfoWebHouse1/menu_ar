@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:menu_ar/model/user_model.dart';
+import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -258,7 +259,7 @@ class ProfileScreen extends StatelessWidget {
                         context: context,
                         title: "Log Out",
                         onTapYes: () {
-                          //
+                          Navigator.of(context).pushNamed(AppRoutes.splashScreen);
                         },
                         yesLabel: "Confirm",
                         noLabel: "Cancel",
