@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menu_ar/data/response/status.dart';
 import 'package:menu_ar/model/restaurant_model.dart';
+import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
 import 'package:menu_ar/view/Home/detail_restaurant_screen.dart';
 import 'package:menu_ar/viewModel/home_view_model.dart';
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         leading: IconButton(
           onPressed: () {
-            //
+            Navigator.pushNamed(context, AppRoutes.QRScreen);
           },
           icon: const Icon(
             Icons.document_scanner,

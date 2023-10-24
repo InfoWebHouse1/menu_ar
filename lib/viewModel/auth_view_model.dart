@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +7,15 @@ import 'package:menu_ar/model/user_model.dart';
 import 'package:menu_ar/services/firebase_services.dart';
 import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-class AuthViewModel extends GetxController{
+class AuthViewModel extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   Rxn<User> firebaseUser = Rxn<User>();
+
   User? get user => firebaseUser.value;
   RxBool isLoading = true.obs;
+  bool _isPermissionHandler = false;
 
   @override
   void onInit() {
@@ -58,5 +60,12 @@ class AuthViewModel extends GetxController{
     isLoading.value = true;
     update();
     return retVal;
+  }
+
+  Future<void> requestPermissionHandler() async {
+    var status = await Permission.camera.isGranted;
+    if (_isPermissionHandler = status) {
+      PermissionStatus.granted;
+    }
   }
 }

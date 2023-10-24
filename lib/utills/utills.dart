@@ -27,6 +27,7 @@ class Utils {
   static String imgSplash = "assets/images/img_splash.png";
   static String googleIcon = "assets/images/google_icon.png";
   static String defaultImg = "assets/images/cartoon.png";
+  static String burgerImg = "assets/images/burger_img.jpg";
 
   /// font
   static const TextStyle robotoRegular = TextStyle(

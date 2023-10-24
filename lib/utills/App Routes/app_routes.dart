@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:menu_ar/view/Authentication/login_screen.dart';
+import 'package:menu_ar/view/Home/camera_screen.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
+import 'package:menu_ar/view/Home/qr_view.dart';
+import 'package:menu_ar/view/Home/result_screen.dart';
 import 'package:menu_ar/view/Nav%20Bar/bottom_nav_bar_screen.dart';
 import 'package:menu_ar/view/Profile/profile_screen.dart';
 import 'package:menu_ar/view/Splash/splash_screen.dart';
@@ -12,6 +15,9 @@ class AppRoutes {
   static const String bottomAppBarScreen = '/bottom_app_bar_screen';
   static const String homeScreen = '/home_screen';
   static const String profileScreen = '/profile_screen';
+  static const String cameraScreen = '/camera_screen';
+  static const String resultScreen = '/result_screen';
+  static const String QRScreen = '/qr_screen';
 
 
   static Map<String, WidgetBuilder> routes = {
@@ -20,5 +26,8 @@ class AppRoutes {
     bottomAppBarScreen: (context) => const CustomNavigationBar(),
     homeScreen: (context) => HomeScreen(),
     profileScreen: (context) => ProfileScreen(currentUserID: FirebaseAuth.instance.currentUser!.uid),
+    cameraScreen: (context) => const CameraScreen(),
+    resultScreen: (context) => ResultTextScreen(),
+    QRScreen: (context) => QRView(),
   };
 }
