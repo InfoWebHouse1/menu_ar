@@ -27,7 +27,11 @@ class Utils {
   static String imgSplash = "assets/images/img_splash.png";
   static String googleIcon = "assets/images/google_icon.png";
   static String defaultImg = "assets/images/cartoon.png";
-  static String burgerImg = "assets/images/burger_img.jpg";
+  static String burgerImg = "assets/images/burger.png";
+  static String zingerImg = "assets/images/zinger_burger.png";
+  static String friesImg = "assets/images/fries.png";
+  static String shawarmaImg = "assets/images/shawarma.png";
+  static String sandwichImg = "assets/images/club_sandwich.png";
 
   /// font
   static const TextStyle robotoRegular = TextStyle(

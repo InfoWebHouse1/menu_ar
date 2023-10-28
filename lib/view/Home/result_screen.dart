@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:menu_ar/utills/utills.dart';
+import 'package:menu_ar/view/Home/ar_view.dart';
 
 class ResultTextScreen extends StatefulWidget {
-  String? text;
+  //String? text;
 
-  ResultTextScreen({super.key, this.text});
+  ResultTextScreen({super.key});
 
   @override
   State<ResultTextScreen> createState() => _ResultTextScreenState();
 }
 
 class _ResultTextScreenState extends State<ResultTextScreen> {
-  String? resultMessage;
-
-  bool? isWordFound;
+  // String? resultMessage;
+  //
+  // bool? isWordFound;
 
   @override
   void initState() {
     super.initState();
-    isWordFound = false;
+    //isWordFound = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    //String paragraph = "This is a sample paragraph for scanning text in Flutter.";
-    String targetWord = "burger"; // Change this to the word you want to find
-
-    List<String> scanTexts = widget.text!.split(' ');
-    for (String word in scanTexts) {
-      if (word.toLowerCase() == targetWord.toLowerCase()) {
-        isWordFound = true;
-        break;
-      }
-    }
+    // String targetWord = "burger";
+    //
+    // List<String> scanTexts = resultMessage!.split(' ');
+    // for (String word in scanTexts) {
+    //   if (word.toLowerCase() == targetWord.toLowerCase()) {
+    //     isWordFound = true;
+    //     break;
+    //   }
+    // }
 
     // Display the result
     //resultMessage = isWordFound! ? "The word '$targetWord' was found in the paragraph." : "The word '$targetWord' was not found in the paragraph.";
@@ -61,7 +61,124 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
       ),
       body: Container(
         padding: const EdgeInsets.all(30.0),
-        child: isWordFound == true ?  Image.asset(Utils.burgerImg) : const Text("No Matching"),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Burger",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => ARViewScreen(
+                          valueItem: Utils.burgerImg,
+                        ), //(text: recognizedText.text),
+                      ),
+                    );
+                  },
+                  child: Image.asset(Utils.burgerImg),
+                ),
+              ),
+              Text(
+                "Zinger Burger",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.zingerImg,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.zingerImg)),
+              ),
+              Text(
+                "Fries",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.friesImg,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.friesImg)),
+              ),
+              Text(
+                "Shawarma",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.shawarmaImg,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.shawarmaImg)),
+              ),
+              Text(
+                "Sandwich",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.sandwichImg,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.sandwichImg)),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

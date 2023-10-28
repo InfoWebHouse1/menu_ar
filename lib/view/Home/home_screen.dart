@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.QRScreen);
+            Navigator.pushNamed(context, AppRoutes.cameraScreen);
           },
           icon: const Icon(
             Icons.document_scanner,

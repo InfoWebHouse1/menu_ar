@@ -194,7 +194,7 @@ class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver
 
       await navigator.push(
         MaterialPageRoute(
-          builder: (BuildContext context) => ResultTextScreen(text: recognizedText.text),
+          builder: (BuildContext context) => ResultTextScreen(),//(text: recognizedText.text),
         ),
       );
     } catch (e) {

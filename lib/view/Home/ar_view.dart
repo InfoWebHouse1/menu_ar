@@ -18,9 +18,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:vector_math/vector_math_64.dart';
 
 class ARViewScreen extends StatefulWidget {
-  Function() closeScreen;
+  String? valueItem;
+  //bool? closeScreen;
 
-  ARViewScreen({super.key, required this.closeScreen});
+  ARViewScreen({super.key, this.valueItem});
 
   @override
   State<ARViewScreen> createState() => _ARViewScreenState();
@@ -38,6 +39,7 @@ class _ARViewScreenState extends State<ARViewScreen> {
   void dispose() {
     super.dispose();
     arSessionManager!.dispose();
+    widget.valueItem! == '';
   }
 
   @override
@@ -47,7 +49,7 @@ class _ARViewScreenState extends State<ARViewScreen> {
         title: const Text('AR View'),
         leading: GestureDetector(
           onTap: () {
-            widget.closeScreen();
+            // widget.closeScreen == false;
             Navigator.pop(context);
           },
           child: const Icon(
@@ -115,7 +117,8 @@ class _ARViewScreenState extends State<ARViewScreen> {
       // Add note to anchor
       var newNode = ARNode(
           type: NodeType.webGLB,
-          uri: "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/burger_model.glb?alt=media&token=2cba7d11-4767-444b-965c-c1159886bcae&_gl=1*psxapo*_ga*MTM4MTM5OTYzNi4xNjk1MzEyMjAy*_ga_CW55HF8NVT*MTY5ODE2OTEzNC45LjEuMTY5ODE2OTIzMi4zNy4wLjA.",
+          uri: widget.valueItem!,
+          //uri: "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/burger_model.glb?alt=media&token=2cba7d11-4767-444b-965c-c1159886bcae&_gl=1*psxapo*_ga*MTM4MTM5OTYzNi4xNjk1MzEyMjAy*_ga_CW55HF8NVT*MTY5ODE2OTEzNC45LjEuMTY5ODE2OTIzMi4zNy4wLjA.",
           scale: Vector3(0.2, 0.2, 0.2),
           position: Vector3(0.0, 0.0, 0.0),
           rotation: Vector4(1.0, 0.0, 0.0, 0.0));

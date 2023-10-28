@@ -33,16 +33,16 @@ class _QRViewState extends State<QRView> {
           debugPrint('Barcode found! ${barcodes[0].rawValue}');
           if (!isScanDetected) {
             isScanDetected = true;
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ARViewScreen(
-                  closeScreen: () {
-                    closeScreen();
-                  },
-                ),
-              ),
-            );
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => ARViewScreen(
+            //       closeScreen: () {
+            //         closeScreen();
+            //       },
+            //     ),
+            //   ),
+            // );
           }
         },
       ),
