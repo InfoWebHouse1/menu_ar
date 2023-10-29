@@ -7,10 +7,13 @@ import 'package:menu_ar/utills/app_url.dart';
 class HomeRepository {
   final BaseApiServices _apiServices = NetworkApiService();
 
-  Future<NearByRestaurantModel> fetchRestaurantResultApi() async {
+  Future<NearByRestaurantModel> fetchRestaurantResultApi({
+    required double lat,
+    required double long,
+  }) async {
     try {
       var response = await _apiServices.getGetApiResponse(
-        AppURl.nearByPlacesUrl,
+        "${AppURl.nearByPlacesUrl}location=$lat,$long&radius=1000.0&type=restaurant&key=${AppURl.apiKey}",
       );
       if (kDebugMode) {
         print("Data Resp: $response");

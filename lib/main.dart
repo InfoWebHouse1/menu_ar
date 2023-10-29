@@ -4,6 +4,7 @@ import 'package:menu_ar/binding/auth_binding.dart';
 import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:menu_ar/viewModel/auth_view_model.dart';
 import 'package:menu_ar/viewModel/home_view_model.dart';
 import 'package:provider/provider.dart';
 

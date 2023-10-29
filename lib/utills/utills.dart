@@ -8,6 +8,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class Utils {
   /// google APi
   static const googleApiKey = "AIzaSyBKZIi4t2Am1SdHAqNQD58B1m-uLA69mtE";
+
   ///Firebase Document Ref
   final userRef = FirebaseFirestore.instance.collection("Users");
 
@@ -40,14 +41,14 @@ class Utils {
 
   /// Custom Dialog Box
   customDialogBox({
-    BuildContext? context,
+    required BuildContext context,
     VoidCallback? onTapYes,
     String? title,
     String? yesLabel,
     String? noLabel,
   }) {
     return showDialog(
-      context: context!,
+      context: context,
       builder: (context) {
         return CupertinoAlertDialog(
           title: Text(
@@ -99,7 +100,6 @@ class Utils {
       },
     );
   }
-
 
   static toastMessage(String message) {
     Fluttertoast.showToast(

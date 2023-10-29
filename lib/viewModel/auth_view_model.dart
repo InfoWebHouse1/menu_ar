@@ -7,6 +7,7 @@ import 'package:menu_ar/model/user_model.dart';
 import 'package:menu_ar/services/firebase_services.dart';
 import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
+import 'package:menu_ar/view/Splash/splash_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class AuthViewModel extends GetxController {
@@ -60,6 +61,30 @@ class AuthViewModel extends GetxController {
     isLoading.value = true;
     update();
     return retVal;
+  }
+
+  void signOut({required BuildContext context}) async {
+    String retVal = "Error";
+    GoogleSignIn googleSignIn = GoogleSignIn(
+      scopes: [
+        'email',
+        'https://www.googleapis.com/auth/contacts.readonly',
+      ],
+    );
+    try {
+      isLoading.value = false;
+      update();
+      await googleSignIn.signOut();
+      await auth.signOut();
+      Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil(
+        AppRoutes.splashScreen,
+        (_) => false,
+      );
+      retVal = "Success";
+    } catch (e) {
+      rethrow;
+    }
+    isLoading.value = true;
   }
 
   Future<void> requestPermissionHandler() async {

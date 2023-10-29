@@ -3,18 +3,20 @@ import 'dart:developer';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:menu_ar/model/user_model.dart';
 import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
+import 'package:menu_ar/viewModel/auth_view_model.dart';
+import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ProfileScreen extends StatelessWidget {
   final String currentUserID;
 
-  const ProfileScreen({
-    super.key,
-    required this.currentUserID,
-  });
+  ProfileScreen({super.key, required this.currentUserID});
+
+  final authController = Get.put(AuthViewModel());
 
   @override
   Widget build(BuildContext context) {
@@ -259,7 +261,7 @@ class ProfileScreen extends StatelessWidget {
                         context: context,
                         title: "Log Out",
                         onTapYes: () {
-                          Navigator.of(context).pushNamed(AppRoutes.splashScreen);
+                          authController.signOut(context: context);
                         },
                         yesLabel: "Confirm",
                         noLabel: "Cancel",

@@ -19,13 +19,16 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<Widget> _buildScreens() {
     return [
       HomeScreen(),
-      ProfileScreen(currentUserID: FirebaseAuth.instance.currentUser!.uid,),
+      ProfileScreen(
+        currentUserID: FirebaseAuth.instance.currentUser!.uid,
+      ),
     ];
   }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: (){
+      onWillPop: () {
         return Future.value(false);
       },
       child: PersistentTabView(
@@ -40,12 +43,20 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         backgroundColor: Utils.secondaryColor,
         items: [
           PersistentBottomNavBarItem(
-              icon: const Icon(Icons.home_filled, color: Utils.primaryColor,),
+              icon: const Icon(
+                Icons.home_filled,
+                color: Utils.primaryColor,
+              ),
               inactiveIcon: const Icon(Icons.home_filled, color: Utils.greyColor),
               contentPadding: 10,
-              routeAndNavigatorSettings: RouteAndNavigatorSettings(routes: AppRoutes.routes)),
+              routeAndNavigatorSettings: RouteAndNavigatorSettings(
+                routes: AppRoutes.routes,
+              )),
           PersistentBottomNavBarItem(
-              icon: const Icon(Icons.person_outlined, color: Utils.primaryColor,),
+              icon: const Icon(
+                Icons.person_outlined,
+                color: Utils.primaryColor,
+              ),
               inactiveIcon: const Icon(Icons.person_outlined, color: Utils.greyColor),
               contentPadding: 10,
               routeAndNavigatorSettings: RouteAndNavigatorSettings(routes: AppRoutes.routes)),
