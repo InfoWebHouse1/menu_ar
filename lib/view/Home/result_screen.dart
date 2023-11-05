@@ -80,7 +80,7 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) => ARViewScreen(
-                          valueItem: Utils.burgerImg,
+                          valueItem: Utils.burgerModel,
                         ), //(text: recognizedText.text),
                       ),
                     );
@@ -88,28 +88,28 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                   child: Image.asset(Utils.burgerImg),
                 ),
               ),
-              Text(
-                "Zinger Burger",
-                style: Utils.robotoRegular.copyWith(
-                  fontSize: 14.6,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: 150,
-                child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.zingerImg,
-                          ), //(text: recognizedText.text),
-                        ),
-                      );
-                    },
-                    child: Image.asset(Utils.zingerImg)),
-              ),
+              // Text(
+              //   "Zinger Burger",
+              //   style: Utils.robotoRegular.copyWith(
+              //     fontSize: 14.6,
+              //     fontWeight: FontWeight.w300,
+              //   ),
+              // ),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.width,
+              //   height: 150,
+              //   child: GestureDetector(
+              //       onTap: () {
+              //         Navigator.of(context).push(
+              //           MaterialPageRoute(
+              //             builder: (BuildContext context) => ARViewScreen(
+              //               valueItem: Utils.zingerModel,
+              //             ), //(text: recognizedText.text),
+              //           ),
+              //         );
+              //       },
+              //       child: Image.asset(Utils.zingerImg)),
+              // ),
               Text(
                 "Fries",
                 style: Utils.robotoRegular.copyWith(
@@ -125,35 +125,35 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.friesImg,
+                            valueItem: Utils.friesModel,
                           ), //(text: recognizedText.text),
                         ),
                       );
                     },
                     child: Image.asset(Utils.friesImg)),
               ),
-              Text(
-                "Shawarma",
-                style: Utils.robotoRegular.copyWith(
-                  fontSize: 14.6,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: 150,
-                child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.shawarmaImg,
-                          ), //(text: recognizedText.text),
-                        ),
-                      );
-                    },
-                    child: Image.asset(Utils.shawarmaImg)),
-              ),
+              // Text(
+              //   "Shawarma",
+              //   style: Utils.robotoRegular.copyWith(
+              //     fontSize: 14.6,
+              //     fontWeight: FontWeight.w300,
+              //   ),
+              // ),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.width,
+              //   height: 150,
+              //   child: GestureDetector(
+              //       onTap: () {
+              //         Navigator.of(context).push(
+              //           MaterialPageRoute(
+              //             builder: (BuildContext context) => ARViewScreen(
+              //               valueItem: Utils.shawarmaImg,
+              //             ), //(text: recognizedText.text),
+              //           ),
+              //         );
+              //       },
+              //       child: Image.asset(Utils.shawarmaImg)),
+              // ),
               Text(
                 "Sandwich",
                 style: Utils.robotoRegular.copyWith(
@@ -169,7 +169,7 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.sandwichImg,
+                            valueItem: Utils.sandwichModel,
                           ), //(text: recognizedText.text),
                         ),
                       );
