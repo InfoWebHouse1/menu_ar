@@ -176,6 +176,116 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                     },
                     child: Image.asset(Utils.sandwichImg)),
               ),
+              Text(
+                "Cheese Burger",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.cheeseBurgerModel,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.cheeseBurgerImg)),
+              ),
+              Text(
+                "Double Petty Burger",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.doublePettyBurgerImg,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.doublePettyBurgerImg)),
+              ),
+              Text(
+                "Hot Dog",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.hotDogModel,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.hotDogImg)),
+              ),
+              Text(
+                "Coffee Cup",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.coffeeCupModel,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.coffeeCupImg)),
+              ),
+              Text(
+                "Donut",
+                style: Utils.robotoRegular.copyWith(
+                  fontSize: 14.6,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ARViewScreen(
+                            valueItem: Utils.donutImg,
+                          ), //(text: recognizedText.text),
+                        ),
+                      );
+                    },
+                    child: Image.asset(Utils.donutImg)),
+              ),
             ],
           ),
         ),

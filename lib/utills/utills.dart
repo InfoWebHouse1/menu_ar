@@ -39,6 +39,17 @@ class Utils {
   static String shawarmaImg = "assets/images/shawarma.png";
   static String sandwichImg = "assets/images/club_sandwich.png";
   static String sandwichModel = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_2721833_Loaf%2Bof%2BBread.glb?alt=media&token=6c6f2c85-eeeb-4c48-80c6-0e37a07ea2bd&_gl=1*17zi558*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTE0MzMxMS40LjEuMTY5OTE0MzMyMy40OC4wLjA.";
+  static String cheeseBurgerImg = "assets/images/cheese_burger.png";
+  static String cheeseBurgerModel = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4201950_cheesburger.glb?alt=media&token=8473a848-ef73-4a71-9859-dceb7fb855d8&_gl=1*ubclx9*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyODcyMy4zNC4wLjA.";
+  static String donutImg = "assets/images/donut.png";
+  static String donutModel = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4100258_donut21.glb?alt=media&token=ca4b81fc-1b79-403d-8044-b87247055aa6&_gl=1*11vr86f*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyODg5OS42MC4wLjA.";
+  static String doublePettyBurgerImg = "assets/images/double_petty_burger.png";
+  static String doublePettyBurgerModel = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_2465920_burger_merged.glb?alt=media&token=43e1d64f-e868-4cf0-8794-156b79c4fddb&_gl=1*ykk2ty*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTEzNTQ0Ni4yLjEuMTY5OTEzNTQ2MS40NS4wLjA.";
+  static String coffeeCupImg = "assets/images/coffee_cup.png";
+  static String coffeeCupModel = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/Paper%20cup.glb?alt=media&token=e85b99dd-456c-40ee-9b9d-3d91b6b793a7&_gl=1*1p6bu9p*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyOTI0My41MC4wLjA.";
+  static String hotDogImg = "assets/images/hot_dog.png";
+  static String hotDogModel = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4197508_untitled.glb?alt=media&token=980fcb8c-c235-40b6-9f63-5e55a73e4646&_gl=1*1l4tt4o*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyOTExMC42MC4wLjA.";
+
 
   /// font
   static const TextStyle robotoRegular = TextStyle(
