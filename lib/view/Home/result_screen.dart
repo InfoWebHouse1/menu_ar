@@ -213,7 +213,7 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.doublePettyBurgerImg,
+                            valueItem: Utils.doublePettyBurgerModel,
                           ), //(text: recognizedText.text),
                         ),
                       );
@@ -279,7 +279,7 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.donutImg,
+                            valueItem: Utils.donutModel,
                           ), //(text: recognizedText.text),
                         ),
                       );
