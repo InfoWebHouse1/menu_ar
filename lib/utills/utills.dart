@@ -13,12 +13,12 @@ class Utils {
   final userRef = FirebaseFirestore.instance.collection("Users");
 
   /// colors
-  static const primaryColor = Color(0xFFEB89B5);
-  static const primaryLightColor = Color(0xFFFFD7E9);
-  static const secondaryColor = Color(0xFFFFF8D2);
-  static const backgroundColor = Color(0xFFFFFBF3);
+  static const primaryColor = Color(0xFF9D432C);
+  static const primaryLightColor = Color(0xFFCDA788);
+  static const secondaryColor = Color(0xFFDB7B50);
+  static const backgroundColor = Color(0xFFEDD6C4);
   static const blackColor = Color(0xFF000000);
-  static const greyColor = Colors.grey;
+  static const whiteColor = Colors.white;
   static const blueColor = Color(0XFF1886E7);
   static const redColor = Color(0XFFBE2020);
   static const lightRedColor = Color(0XFFFF5454);

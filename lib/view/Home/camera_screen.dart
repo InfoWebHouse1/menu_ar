@@ -82,15 +82,15 @@ class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                leading: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios_new,
-                    color: Utils.primaryColor,
-                  ),
-                ),
+                // leading: IconButton(
+                //   onPressed: () {
+                //     Navigator.of(context).pop();
+                //   },
+                //   icon: const Icon(
+                //     Icons.arrow_back_ios_new,
+                //     color: Utils.primaryColor,
+                //   ),
+                // ),
               ),
               backgroundColor: _isPermissionGranted ? Colors.transparent : null,
               body: _isPermissionGranted

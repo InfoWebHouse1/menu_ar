@@ -54,10 +54,10 @@ class ProfileScreen extends StatelessWidget {
                         Expanded(
                           flex: 1,
                           child: Shimmer.fromColors(
-                            baseColor: Utils.greyColor,
+                            baseColor: Utils.whiteColor,
                             highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                             child: const CircleAvatar(
-                              backgroundColor: Utils.greyColor,
+                              backgroundColor: Utils.whiteColor,
                               radius: 60,
                             ),
                           ),
@@ -71,24 +71,24 @@ class ProfileScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Shimmer.fromColors(
-                                baseColor: Utils.greyColor,
+                                baseColor: Utils.whiteColor,
                                 highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                                 child: Container(
                                   height: 15,
                                   width: width,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.greyColor),
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.whiteColor),
                                 ),
                               ),
                               SizedBox(
                                 height: height / 40,
                               ),
                               Shimmer.fromColors(
-                                baseColor: Utils.greyColor,
+                                baseColor: Utils.whiteColor,
                                 highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                                 child: Container(
                                   height: 15,
                                   width: width,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.greyColor),
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.whiteColor),
                                 ),
                               ),
                             ],
@@ -101,12 +101,12 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     //todo: Privacy Policy Button
                     Shimmer.fromColors(
-                      baseColor: Utils.greyColor,
+                      baseColor: Utils.whiteColor,
                       highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.greyColor),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.whiteColor),
                       ),
                     ),
                     SizedBox(
@@ -114,12 +114,12 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     //todo: Help Button
                     Shimmer.fromColors(
-                      baseColor: Utils.greyColor,
+                      baseColor: Utils.whiteColor,
                       highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.greyColor),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.whiteColor),
                       ),
                     ),
                     SizedBox(
@@ -127,12 +127,12 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     //todo: About Button
                     Shimmer.fromColors(
-                      baseColor: Utils.greyColor,
+                      baseColor: Utils.whiteColor,
                       highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.greyColor),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.whiteColor),
                       ),
                     ),
                     SizedBox(
@@ -140,12 +140,12 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     //todo: Logout Button
                     Shimmer.fromColors(
-                      baseColor: Utils.greyColor,
+                      baseColor: Utils.whiteColor,
                       highlightColor: Utils.primaryLightColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.greyColor),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Utils.whiteColor),
                       ),
                     ),
                     SizedBox(

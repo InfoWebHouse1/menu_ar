@@ -83,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                       flex: 3,
                       child: Text(
                         "Login",
-                        style: Utils.robotoRegular.copyWith(fontSize: 16, color: Utils.secondaryColor),
+                        style: Utils.robotoRegular.copyWith(fontSize: 16, color: Utils.whiteColor),
                         textAlign: TextAlign.start,
                       ),
                     ),

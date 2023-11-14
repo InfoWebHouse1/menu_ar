@@ -52,15 +52,15 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.cameraScreen);
-          },
-          icon: const Icon(
-            Icons.document_scanner,
-            color: Utils.primaryColor,
-          ),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     Navigator.pushNamed(context, AppRoutes.cameraScreen);
+        //   },
+        //   icon: const Icon(
+        //     Icons.document_scanner,
+        //     color: Utils.primaryColor,
+        //   ),
+        // ),
         actions: [
           Consumer<HomeViewModel>(
             builder: (context, value, child) {
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     "${value.address}",
                     textAlign: TextAlign.center,
                     style: Utils.robotoRegular.copyWith(
-                      color: Utils.greyColor,
+                      color: Utils.whiteColor,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ? Text(
                                           "Not Specified",
                                           style: Utils.robotoRegular.copyWith(
-                                            color: Utils.greyColor,
+                                            color: Utils.whiteColor,
                                             fontWeight: FontWeight.w100,
                                           ),
                                         )
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           text: TextSpan(
                                               text: "Opening Hour: ",
                                               style: Utils.robotoRegular.copyWith(
-                                                color: Utils.greyColor,
+                                                color: Utils.whiteColor,
                                                 fontWeight: FontWeight.w100,
                                               ),
                                               children: [

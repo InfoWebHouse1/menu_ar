@@ -6,6 +6,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:menu_ar/data/response/api_response.dart';
 import 'package:menu_ar/model/near_by_restaurant.dart';
 import 'package:menu_ar/repository/home_repo.dart';
+import 'package:menu_ar/utills/app_url.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeViewModel extends ChangeNotifier {
   final _homeRepo = HomeRepository();
@@ -88,5 +90,15 @@ class HomeViewModel extends ChangeNotifier {
   getAddress(String newAddress) {
     _address = newAddress;
     notifyListeners();
+  }
+
+  Future<void> openMaps(String address) async {
+    String mapUrl = '${AppURl.googleMapUrl}api=1&query=$address';
+
+    if (await canLaunchUrl(Uri.parse(mapUrl))) {
+      await launchUrl(Uri.parse(mapUrl));
+    } else {
+      throw 'Could not launch $mapUrl';
+    }
   }
 }

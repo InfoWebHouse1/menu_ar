@@ -6,6 +6,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menu_ar/model/near_by_restaurant.dart';
 import 'package:menu_ar/utills/app_url.dart';
 import 'package:menu_ar/utills/utills.dart';
+import 'package:menu_ar/viewModel/home_view_model.dart';
+import 'package:provider/provider.dart';
 
 class DetailRestaurantScreen extends StatefulWidget {
   final Results nearByRestaurantModel;
@@ -21,6 +23,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    var homeViewModel = Provider.of<HomeViewModel>(context);
     return Scaffold(
       backgroundColor: Utils.backgroundColor,
       appBar: AppBar(
@@ -81,7 +84,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                       TextSpan(
                                         text: "${widget.nearByRestaurantModel.name}",
                                         style: Utils.robotoRegular.copyWith(
-                                          color: Utils.greyColor,
+                                          color: Utils.whiteColor,
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
@@ -98,7 +101,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                       TextSpan(
                                         text: "${widget.nearByRestaurantModel.scope}",
                                         style: Utils.robotoRegular.copyWith(
-                                          color: Utils.greyColor,
+                                          color: Utils.whiteColor,
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
@@ -115,28 +118,41 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                       TextSpan(
                                         text: "${widget.nearByRestaurantModel.businessStatus}",
                                         style: Utils.robotoRegular.copyWith(
-                                          color: Utils.greyColor,
+                                          color: Utils.whiteColor,
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
                                     ]),
                               ),
-                              RichText(
-                                text: TextSpan(
-                                    text: "Address: ",
-                                    style: Utils.robotoRegular.copyWith(
-                                      color: Utils.primaryColor,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    children: [
-                                      TextSpan(
-                                        text: "${widget.nearByRestaurantModel.vicinity}",
-                                        style: Utils.robotoRegular.copyWith(
-                                          color: Utils.greyColor,
-                                          fontWeight: FontWeight.w300,
-                                        ),
+                              GestureDetector(
+                                onTap: () {
+                                  Utils().customDialogBox(
+                                    context: context,
+                                    title: "Are you sure, you want to go to the map?",
+                                    onTapYes: () {
+                                      homeViewModel.openMaps("${widget.nearByRestaurantModel.vicinity}");
+                                    },
+                                    yesLabel: "Confirm",
+                                    noLabel: "Cancel",
+                                  );
+                                },
+                                child: RichText(
+                                  text: TextSpan(
+                                      text: "Address: ",
+                                      style: Utils.robotoRegular.copyWith(
+                                        color: Utils.primaryColor,
+                                        fontWeight: FontWeight.w600,
                                       ),
-                                    ]),
+                                      children: [
+                                        TextSpan(
+                                          text: "${widget.nearByRestaurantModel.vicinity}",
+                                          style: Utils.robotoRegular.copyWith(
+                                            color: Utils.whiteColor,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                        ),
+                                      ]),
+                                ),
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +168,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                           TextSpan(
                                             text: "${widget.nearByRestaurantModel.rating}",
                                             style: Utils.robotoRegular.copyWith(
-                                              color: Utils.greyColor,
+                                              color: Utils.whiteColor,
                                               fontWeight: FontWeight.w300,
                                             ),
                                           ),
@@ -210,7 +226,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                               child: Text(
                                 "No image yet",
                                 style: Utils.robotoRegular.copyWith(
-                                  color: Utils.greyColor,
+                                  color: Utils.whiteColor,
                                   fontSize: 18.6,
                                   fontWeight: FontWeight.w300,
                                 ),
