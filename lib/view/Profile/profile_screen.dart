@@ -215,7 +215,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -223,7 +223,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   //todo: Privacy Policy Button
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.PPScreen);
+                    },
                     child: const ProfileFields(
                       icon: Icons.privacy_tip_outlined,
                       text: "Privacy Policy",
@@ -232,23 +234,26 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(
                     child: Divider(),
                   ),
-                  //todo: Help Button
+                  //todo: About Button
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.aboutUsScreen);
+                    },
                     child: const ProfileFields(
-                      icon: Icons.help_outline,
-                      text: "Help",
+                      icon: Icons.info_outline,
+                      text: "About",
                     ),
                   ),
                   const SizedBox(
                     child: Divider(),
-                  ),
-                  //todo: About Button
+                  ), //todo: Help Button
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.helpScreen);
+                    },
                     child: const ProfileFields(
-                      icon: Icons.info_outline,
-                      text: "About",
+                      icon: Icons.help_outline,
+                      text: "Help",
                     ),
                   ),
                   const SizedBox(
@@ -260,6 +265,7 @@ class ProfileScreen extends StatelessWidget {
                       Utils().customDialogBox(
                         context: context,
                         title: "Log Out",
+                        content: "Note: Do you Want to Logout?",
                         onTapYes: () {
                           authController.signOut(context: context);
                         },

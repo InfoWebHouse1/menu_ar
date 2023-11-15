@@ -129,6 +129,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                   Utils().customDialogBox(
                                     context: context,
                                     title: "Are you sure, you want to go to the map?",
+                                    content: "",
                                     onTapYes: () {
                                       homeViewModel.openMaps("${widget.nearByRestaurantModel.vicinity}");
                                     },
