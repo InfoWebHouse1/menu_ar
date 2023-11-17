@@ -6,6 +6,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menu_ar/model/near_by_restaurant.dart';
 import 'package:menu_ar/utills/app_url.dart';
 import 'package:menu_ar/utills/utills.dart';
+import 'package:menu_ar/view/Home/components/view_full_screen.dart';
 import 'package:menu_ar/viewModel/home_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -243,19 +244,29 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                 itemCount: widget.nearByRestaurantModel.photos!.length,
                                 itemBuilder: (context, index) {
                                   var photoReference = widget.nearByRestaurantModel.photos![index].photoReference;
-                                  return SizedBox(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8.0),
-                                      ),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8.0),
-                                        child: CachedNetworkImage(
-                                          imageUrl:
-                                              "${AppURl.baseUrl}${AppURl.nearByPlacesPhotosUrl}?maxwidth=${width.round()}&maxheight=${height.round()}&photoreference=$photoReference&key=${Utils.googleApiKey}",
-                                          width: width,
-                                          height: height,
-                                          fit: BoxFit.fill,
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) => ViewFullImageScreen(
+                                              "${AppURl.baseUrl}${AppURl.nearByPlacesPhotosUrl}?maxwidth=${width.round()}&maxheight=${height.round()}&photoreference=$photoReference&key=${Utils.googleApiKey}"),
+                                        ),
+                                      );
+                                    },
+                                    child: SizedBox(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(8.0),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.0),
+                                          child: CachedNetworkImage(
+                                            imageUrl:
+                                                "${AppURl.baseUrl}${AppURl.nearByPlacesPhotosUrl}?maxwidth=${width.round()}&maxheight=${height.round()}&photoreference=$photoReference&key=${Utils.googleApiKey}",
+                                            width: width,
+                                            height: height,
+                                            fit: BoxFit.fill,
+                                          ),
                                         ),
                                       ),
                                     ),

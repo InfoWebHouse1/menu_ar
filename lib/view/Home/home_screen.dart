@@ -52,15 +52,18 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        // leading: IconButton(
-        //   onPressed: () {
-        //     Navigator.pushNamed(context, AppRoutes.cameraScreen);
-        //   },
-        //   icon: const Icon(
-        //     Icons.document_scanner,
-        //     color: Utils.primaryColor,
-        //   ),
-        // ),
+        leading: Container(
+          padding: const EdgeInsets.only(left: 5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              Utils.imgLogo,
+            ),
+          ),
+        ),
         actions: [
           Consumer<HomeViewModel>(
             builder: (context, value, child) {

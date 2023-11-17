@@ -23,6 +23,8 @@ class Utils {
   static const redColor = Color(0XFFBE2020);
   static const lightRedColor = Color(0XFFFF5454);
 
+  /// logo
+  static String imgLogo = "assets/images/logo.png";
   /// images
   static String imgOnboarding = "assets/images/img_login.png";
   static String imgSplash = "assets/images/img_splash.png";
