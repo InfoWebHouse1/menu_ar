@@ -23,6 +23,11 @@ class Utils {
   static const redColor = Color(0XFFBE2020);
   static const lightRedColor = Color(0XFFFF5454);
 
+  /// Slider
+  static String imgSlider1 = "assets/images/1.jpg";
+  static String imgSlider2 = "assets/images/2.jpg";
+  static String imgSlider3 = "assets/images/3.jpg";
+
   /// logo
   static String imgLogo = "assets/images/logo.png";
   /// images
@@ -63,6 +68,8 @@ class Utils {
   static String hotDogModel =
       "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4197508_untitled.glb?alt=media&token=980fcb8c-c235-40b6-9f63-5e55a73e4646&_gl=1*1l4tt4o*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyOTExMC42MC4wLjA.";
 
+  /// qr Code
+  static String qrScanCode = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/AR%20Menu.pdf?alt=media&token=4f3dda73-7b44-4979-b3f9-898fe663a483";
   /// privacy Text
   static String privacy_data = """
 Privacy Policy for MenuAR

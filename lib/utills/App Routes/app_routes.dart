@@ -34,7 +34,7 @@ class AppRoutes {
     profileScreen: (context) => ProfileScreen(currentUserID: FirebaseAuth.instance.currentUser!.uid),
     cameraScreen: (context) => const CameraScreen(),
     resultScreen: (context) => ResultTextScreen(),
-    QRScreen: (context) => const QRView(),
+    QRScreen: (context) => const QRViewScreen(),
     PPScreen: (context) => const PrivacyPolicyScreen(),
     aboutUsScreen: (context) => const AboutUsScreen(),
     helpScreen: (context) => const HelpScreen(),

@@ -1,51 +1,92 @@
-import 'dart:developer';
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:menu_ar/view/Home/ar_view.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:menu_ar/utills/utills.dart';
+import 'package:menu_ar/view/Home/result_screen.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-class QRView extends StatefulWidget {
-  const QRView({super.key});
+class QRViewScreen extends StatefulWidget {
+  const QRViewScreen({super.key});
 
   @override
-  State<QRView> createState() => _QRViewState();
+  State<QRViewScreen> createState() => _QRViewScreenState();
 }
 
-class _QRViewState extends State<QRView> {
-  bool isScanDetected = false;
+class _QRViewScreenState extends State<QRViewScreen> {
+  final GlobalKey _qrKey = GlobalKey(debugLabel: 'QR');
 
-  closeScreen() {
-    isScanDetected = false;
+  QRViewController? _controller;
+
+  @override
+  void dispose() {
+    _controller!.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MobileScanner(
-        // fit: BoxFit.contain,
-        controller: MobileScannerController(
-          detectionSpeed: DetectionSpeed.normal,
-          facing: CameraFacing.back,
-        ),
-        onDetect: (capture) {
-          final List<Barcode> barcodes = capture.barcodes;
-          debugPrint('Barcode found! ${barcodes[0].rawValue}');
-          if (!isScanDetected) {
-            isScanDetected = true;
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => ARViewScreen(
-            //       closeScreen: () {
-            //         closeScreen();
-            //       },
-            //     ),
-            //   ),
-            // );
-          }
-        },
+      body: QRView(
+        key: _qrKey,
+        onQRViewCreated: _onQRViewCreated,
       ),
     );
   }
+
+  void _onQRViewCreated(QRViewController controller) {
+    _controller = controller;
+    controller.scannedDataStream.listen((scanData) {
+      if (isValidQRCode(Utils.qrScanCode)) {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (BuildContext context) => ResultTextScreen(), //(text: recognizedText.text),
+          ),
+        );
+        if (kDebugMode) {
+          print("Valid QR Code: $scanData");
+        }
+      } else {
+        Utils.toastMessage("Not Valid QR Code");
+      }
+    });
+  }
+
+  bool isValidQRCode(String qrData) {
+    return qrData.startsWith(Utils.qrScanCode);
+  }
+
+// bool isScanDetected = false;
+//
+// closeScreen() {
+//   isScanDetected = false;
+// }
+//
+// @override
+// Widget build(BuildContext context) {
+//   return Scaffold(
+//     body: MobileScanner(
+//       // fit: BoxFit.contain,
+//       controller: MobileScannerController(
+//         detectionSpeed: DetectionSpeed.normal,
+//         facing: CameraFacing.back,
+//       ),
+//       onDetect: (capture) {
+//         final List<Barcode> barcodes = capture.barcodes;
+//         debugPrint('Barcode found! ${barcodes[0].rawValue}');
+//         if (!isScanDetected) {
+//           isScanDetected = true;
+//           // Navigator.push(
+//           //   context,
+//           //   MaterialPageRoute(
+//           //     builder: (context) => ARViewScreen(
+//           //       closeScreen: () {
+//           //         closeScreen();
+//           //       },
+//           //     ),
+//           //   ),
+//           // );
+//         }
+//       },
+//     ),
+//   );
+// }
 }

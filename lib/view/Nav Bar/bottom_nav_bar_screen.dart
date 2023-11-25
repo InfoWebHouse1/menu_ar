@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
-import 'package:menu_ar/view/Home/camera_screen.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
+import 'package:menu_ar/view/Home/qr_view.dart';
 import 'package:menu_ar/view/Profile/profile_screen.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
@@ -20,7 +20,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<Widget> _buildScreens() {
     return [
       HomeScreen(),
-      CameraScreen(),
+      const QRViewScreen(),
       ProfileScreen(
         currentUserID: FirebaseAuth.instance.currentUser!.uid,
       ),
