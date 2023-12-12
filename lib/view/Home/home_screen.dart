@@ -113,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     aspectRatio: 16 / 9,
                     enlargeFactor: 0.3,
                     enlargeCenterPage: true,
+                    autoPlay: true,
                   ),
                   items: [
                     Container(
@@ -174,6 +175,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   MaterialPageRoute(
                                     builder: (context) => DetailRestaurantScreen(
                                       nearByRestaurantModel: value.defaultRestaurantList.data!.results![index],
+                                      index: index,
+                                      lat: value.defaultRestaurantList.data!.results![index].geometry!.location!.lat,
+                                      long: value.defaultRestaurantList.data!.results![index].geometry!.location!.lng,
+                                      placeID: value.defaultRestaurantList.data!.results![index].placeId,
                                     ),
                                   ),
                                 );
@@ -204,20 +209,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                     )
                                   : RichText(
                                       text: TextSpan(
-                                          text: "Opening Hour: ",
-                                          style: Utils.robotoRegular.copyWith(
-                                            color: Utils.whiteColor,
-                                            fontWeight: FontWeight.w100,
-                                          ),
-                                          children: [
-                                            TextSpan(
-                                              text: value.defaultRestaurantList.data!.results![index].openingHours!.openNow == false ? "Close Now" : "Open Now",
-                                              style: Utils.robotoRegular.copyWith(
-                                                color: Utils.primaryColor,
-                                                fontWeight: FontWeight.w300,
-                                              ),
-                                            )
-                                          ]),
+                                        text: "Opening Hour: ",
+                                        style: Utils.robotoRegular.copyWith(
+                                          color: Utils.whiteColor,
+                                          fontWeight: FontWeight.w100,
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text: value.defaultRestaurantList.data!.results![index].openingHours!.openNow == false ? "Close Now" : "Open Now",
+                                            style: Utils.robotoRegular.copyWith(
+                                              color: Utils.primaryColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                             );
                           },

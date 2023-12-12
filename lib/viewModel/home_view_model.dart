@@ -1,10 +1,13 @@
 import 'dart:developer';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:menu_ar/data/response/api_response.dart';
 import 'package:menu_ar/model/near_by_restaurant.dart';
+import 'package:menu_ar/model/user_model.dart';
 import 'package:menu_ar/repository/home_repo.dart';
 import 'package:menu_ar/utills/app_url.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,6 +24,72 @@ class HomeViewModel extends ChangeNotifier {
 
   double? get latitude => _latitude;
   ApiResponse<NearByRestaurantModel> defaultRestaurantList = ApiResponse.loading();
+  final commentController = TextEditingController();
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  List<dynamic> _allData = [];
+
+  List<dynamic> get allData => _allData;
+  bool _isLoading = false;
+
+  bool get isLoading => _isLoading;
+
+  Future<DocumentSnapshot?> getData({reviewID}) async {
+    try {
+      _isLoading == true;
+      _allData.isEmpty;
+      var dataOfItem = FirebaseFirestore.instance.collection("RestaurantReview").doc(reviewID).get().then((value) {
+        _allData = value.get("review");
+        notifyListeners();
+        if (kDebugMode) {
+          print("allData = $_allData");
+        }
+        // value.data()!.forEach((key, value) {
+        //   _allData = value["review"];
+        //   notifyListeners();
+        //   if (kDebugMode) {
+        //     print("allData = $_allData");
+        //   }
+        // });
+      });
+      // var dataOfItem = FirebaseFirestore.instance.collection('RestaurantReview').get().then(
+      //   (QuerySnapshot? querySnapshot) {
+      //     querySnapshot!.docs.forEach(
+      //       (doc) {
+      //         _allData = doc["review"];
+      //         notifyListeners();
+      //         if (kDebugMode) {
+      //           print("allData = $_allData");
+      //         }
+      //         //  print("getData = ${doc["item_text_"]}");
+      //       },
+      //     );
+      //   },
+      // );
+      _isLoading == false;
+      return dataOfItem;
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  Future createCommentInFirestore({commentID}) async {
+    var user = await getUser(FirebaseAuth.instance.currentUser!.uid);
+    FirebaseFirestore.instance.collection('RestaurantReview').doc(commentID).update({
+      "id": commentID,
+      "review": FieldValue.arrayUnion([
+        {
+          "comment": commentController.text,
+          "email": "${user!.email}",
+          "review": "2.5",
+          "name": "${user.name}",
+        }
+      ])
+    });
+    commentController.clear();
+  }
 
   Future getGeoLocation() async {
     try {
@@ -36,6 +105,18 @@ class HomeViewModel extends ChangeNotifier {
       String formatAddress = "${placeMark.subLocality}, ${placeMark.locality}";
       getAddress(formatAddress);
     } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<UserModel?> getUser(String? uid) async {
+    try {
+      DocumentSnapshot doc = await firestore.collection("Users").doc(uid!).get();
+      return UserModel.fromDocumentSnapshot(documentSnapshot: doc);
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
       rethrow;
     }
   }
@@ -92,8 +173,8 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> openMaps(String address) async {
-    String mapUrl = '${AppURl.googleMapUrl}api=1&query=$address';
+  Future<void> openMaps(double lat,double lng, placeID) async {
+    String mapUrl = '${AppURl.googleMapUrl}api=1&query=$lat,$lng&query_place_id=$placeID';
 
     if (await canLaunchUrl(Uri.parse(mapUrl))) {
       await launchUrl(Uri.parse(mapUrl));

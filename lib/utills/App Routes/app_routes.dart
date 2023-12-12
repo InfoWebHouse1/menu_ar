@@ -5,6 +5,7 @@ import 'package:menu_ar/view/Home/camera_screen.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
 import 'package:menu_ar/view/Home/qr_view.dart';
 import 'package:menu_ar/view/Home/result_screen.dart';
+import 'package:menu_ar/view/Home/review_screen.dart';
 import 'package:menu_ar/view/Nav%20Bar/bottom_nav_bar_screen.dart';
 import 'package:menu_ar/view/Profile/about_us_screen.dart';
 import 'package:menu_ar/view/Profile/help_screen.dart';
@@ -24,6 +25,7 @@ class AppRoutes {
   static const String PPScreen = '/privacy_policy_screen';
   static const String aboutUsScreen = '/about_us_screen';
   static const String helpScreen = '/help_screen';
+  static const String reviewScreen = '/review_screen';
 
 
   static Map<String, WidgetBuilder> routes = {
@@ -38,5 +40,6 @@ class AppRoutes {
     PPScreen: (context) => const PrivacyPolicyScreen(),
     aboutUsScreen: (context) => const AboutUsScreen(),
     helpScreen: (context) => const HelpScreen(),
+    reviewScreen: (context) => ReviewScreen(),
   };
 }

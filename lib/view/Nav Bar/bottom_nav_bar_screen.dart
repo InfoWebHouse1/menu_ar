@@ -45,15 +45,16 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         backgroundColor: Utils.secondaryColor,
         items: [
           PersistentBottomNavBarItem(
-              icon: const Icon(
-                Icons.home_filled,
-                color: Utils.primaryColor,
-              ),
-              inactiveIcon: const Icon(Icons.home_filled, color: Utils.whiteColor),
-              contentPadding: 10,
-              routeAndNavigatorSettings: RouteAndNavigatorSettings(
-                routes: AppRoutes.routes,
-              )),
+            icon: const Icon(
+              Icons.home_filled,
+              color: Utils.primaryColor,
+            ),
+            inactiveIcon: const Icon(Icons.home_filled, color: Utils.whiteColor),
+            contentPadding: 10,
+            routeAndNavigatorSettings: RouteAndNavigatorSettings(
+              routes: AppRoutes.routes,
+            ),
+          ),
           PersistentBottomNavBarItem(
               activeColorPrimary: Utils.whiteColor,
               icon: const Icon(

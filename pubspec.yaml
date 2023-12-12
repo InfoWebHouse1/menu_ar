@@ -59,7 +59,7 @@ dependencies:
   page_transition: any
   persistent_bottom_nav_bar_v2: any
   shimmer: any
-  url_launcher: any
+  url_launcher: 6.2.1
   flutter_rating_bar: ^4.0.1
   camera: ^0.10.5+5
   permission_handler: any

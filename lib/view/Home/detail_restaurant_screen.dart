@@ -4,16 +4,22 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menu_ar/model/near_by_restaurant.dart';
+import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/app_url.dart';
 import 'package:menu_ar/utills/utills.dart';
 import 'package:menu_ar/view/Home/components/view_full_screen.dart';
+import 'package:menu_ar/view/Home/review_screen.dart';
 import 'package:menu_ar/viewModel/home_view_model.dart';
 import 'package:provider/provider.dart';
 
 class DetailRestaurantScreen extends StatefulWidget {
+  final int? index;
   final Results nearByRestaurantModel;
+  final lat;
+  final long;
+  final placeID;
 
-  const DetailRestaurantScreen({super.key, required this.nearByRestaurantModel});
+  const DetailRestaurantScreen({super.key, required this.nearByRestaurantModel, this.index, this.lat, this.long, this.placeID});
 
   @override
   State<DetailRestaurantScreen> createState() => _DetailRestaurantScreenState();
@@ -132,7 +138,8 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                     title: "Are you sure, you want to go to the map?",
                                     content: "",
                                     onTapYes: () {
-                                      homeViewModel.openMaps("${widget.nearByRestaurantModel.vicinity}");
+                                      //homeViewModel.openMaps("${widget.nearByRestaurantModel.vicinity}");
+                                      homeViewModel.openMaps(widget.lat, widget.long, widget.placeID);
                                     },
                                     yesLabel: "Confirm",
                                     noLabel: "Cancel",
@@ -161,20 +168,21 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                 children: [
                                   RichText(
                                     text: TextSpan(
-                                        text: "Ratings: ",
-                                        style: Utils.robotoRegular.copyWith(
-                                          color: Utils.primaryColor,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                        children: [
-                                          TextSpan(
-                                            text: "${widget.nearByRestaurantModel.rating}",
-                                            style: Utils.robotoRegular.copyWith(
-                                              color: Utils.whiteColor,
-                                              fontWeight: FontWeight.w300,
-                                            ),
+                                      text: "Ratings: ",
+                                      style: Utils.robotoRegular.copyWith(
+                                        color: Utils.primaryColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "${widget.nearByRestaurantModel.rating}",
+                                          style: Utils.robotoRegular.copyWith(
+                                            color: Utils.whiteColor,
+                                            fontWeight: FontWeight.w300,
                                           ),
-                                        ]),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   const SizedBox(
                                     height: 3.0,
@@ -196,6 +204,34 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                     },
                                   ),
                                 ],
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => ReviewScreen(
+                                        index: widget.index,
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: RichText(
+                                  text: TextSpan(
+                                      text: "Review: ",
+                                      style: Utils.robotoRegular.copyWith(
+                                        color: Utils.primaryColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "Check and Add",
+                                          style: Utils.robotoRegular.copyWith(
+                                            color: Utils.whiteColor,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                        ),
+                                      ]),
+                                ),
                               ),
                             ],
                           ),
