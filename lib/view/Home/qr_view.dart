@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
 import 'package:menu_ar/view/Home/result_screen.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -32,15 +33,11 @@ class _QRViewScreenState extends State<QRViewScreen> {
     );
   }
 
-  void _onQRViewCreated(QRViewController controller) {
+  void _onQRViewCreated(QRViewController? controller) {
     _controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      if (isValidQRCode(Utils.qrScanCode)) {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (BuildContext context) => ResultTextScreen(), //(text: recognizedText.text),
-          ),
-        );
+    controller!.scannedDataStream.listen((scanData) {
+      if (isValidQRCode(scanData.code)) {
+        Navigator.pushNamed(context, AppRoutes.resultScreen);
         if (kDebugMode) {
           print("Valid QR Code: $scanData");
         }
@@ -50,8 +47,8 @@ class _QRViewScreenState extends State<QRViewScreen> {
     });
   }
 
-  bool isValidQRCode(String qrData) {
-    return qrData.startsWith(Utils.qrScanCode);
+  bool isValidQRCode(String? qrData) {
+    return qrData == Utils.qrScanCode;
   }
 
 // bool isScanDetected = false;

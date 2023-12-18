@@ -221,7 +221,7 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                     child: Image.asset(Utils.doublePettyBurgerImg)),
               ),
               Text(
-                "Hot Dog",
+                "Pizza",
                 style: Utils.robotoRegular.copyWith(
                   fontSize: 14.6,
                   fontWeight: FontWeight.w300,
@@ -235,12 +235,12 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.hotDogModel,
+                            valueItem: Utils.pizzaModel,
                           ), //(text: recognizedText.text),
                         ),
                       );
                     },
-                    child: Image.asset(Utils.hotDogImg)),
+                    child: Image.asset(Utils.pizzaImg)),
               ),
               Text(
                 "Coffee Cup",
@@ -265,7 +265,7 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                     child: Image.asset(Utils.coffeeCupImg)),
               ),
               Text(
-                "Donut",
+                "Deal",
                 style: Utils.robotoRegular.copyWith(
                   fontSize: 14.6,
                   fontWeight: FontWeight.w300,
@@ -279,12 +279,12 @@ class _ResultTextScreenState extends State<ResultTextScreen> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) => ARViewScreen(
-                            valueItem: Utils.donutModel,
+                            valueItem: Utils.dealModel,
                           ), //(text: recognizedText.text),
                         ),
                       );
                     },
-                    child: Image.asset(Utils.donutImg)),
+                    child: Image.asset(Utils.dealImg)),
               ),
             ],
           ),

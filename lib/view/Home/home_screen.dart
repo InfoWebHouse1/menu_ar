@@ -45,11 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Utils.secondaryColor,
+        backgroundColor: Utils.appBarColor,
         title: Text(
           "MENU",
           style: Utils.robotoRegular.copyWith(
-            color: Utils.primaryColor,
+            color: Utils.blackColor,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -70,17 +70,19 @@ class _HomeScreenState extends State<HomeScreen> {
             builder: (context, value, child) {
               return Row(
                 children: [
-                  Text(
-                    "${value.address}",
-                    textAlign: TextAlign.center,
-                    style: Utils.robotoRegular.copyWith(
-                      color: Utils.whiteColor,
-                      fontWeight: FontWeight.w600,
+                  FittedBox(
+                    child: Text(
+                      "${value.address}",
+                      textAlign: TextAlign.center,
+                      style: Utils.robotoRegular.copyWith(
+                        color: Utils.blackColor,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   const Icon(
                     Icons.location_pin,
-                    color: Utils.primaryColor,
+                    color: Utils.blackColor,
                   ),
                 ],
               );
@@ -188,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               contentPadding: EdgeInsets.zero,
                               leading: CircleAvatar(
                                 radius: 40,
-                                backgroundColor: Utils.primaryColor,
+                                backgroundColor: Utils.rightBoxColor,
                                 backgroundImage: NetworkImage(value.defaultRestaurantList.data!.results![index].icon.toString()),
                               ),
                               title: Text(
@@ -203,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ? Text(
                                       "Not Specified",
                                       style: Utils.robotoRegular.copyWith(
-                                        color: Utils.whiteColor,
+                                        color: Utils.blackColor,
                                         fontWeight: FontWeight.w100,
                                       ),
                                     )
@@ -211,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       text: TextSpan(
                                         text: "Opening Hour: ",
                                         style: Utils.robotoRegular.copyWith(
-                                          color: Utils.whiteColor,
+                                          color: Utils.blackColor,
                                           fontWeight: FontWeight.w100,
                                         ),
                                         children: [

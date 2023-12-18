@@ -36,11 +36,11 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Utils.secondaryColor,
+        backgroundColor: Utils.appBarColor,
         title: Text(
           "${widget.nearByRestaurantModel.name}",
           style: Utils.robotoRegular.copyWith(
-            color: Utils.primaryColor,
+            color: Utils.blackColor,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -48,7 +48,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
           onPressed: () => Navigator.of(context).pop(),
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Utils.primaryColor,
+            color: Utils.blackColor,
           ),
         ),
       ),
@@ -59,7 +59,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
             Expanded(
               flex: 1,
               child: Container(
-                color: Utils.primaryColor,
+                color: Utils.leftBoxColor,
                 child: Row(
                   children: [
                     Expanded(
@@ -73,7 +73,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                     Expanded(
                       flex: 1,
                       child: Container(
-                        color: Utils.secondaryColor,
+                        color: Utils.rightBoxColor,
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Column(
@@ -84,7 +84,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                 text: TextSpan(
                                     text: "Restaurant Name: ",
                                     style: Utils.robotoRegular.copyWith(
-                                      color: Utils.primaryColor,
+                                      color: Utils.blackColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                                     children: [
@@ -101,7 +101,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                 text: TextSpan(
                                     text: "Rated By: ",
                                     style: Utils.robotoRegular.copyWith(
-                                      color: Utils.primaryColor,
+                                      color: Utils.blackColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                                     children: [
@@ -118,7 +118,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                 text: TextSpan(
                                     text: "Business Status: ",
                                     style: Utils.robotoRegular.copyWith(
-                                      color: Utils.primaryColor,
+                                      color: Utils.blackColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                                     children: [
@@ -149,7 +149,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                   text: TextSpan(
                                       text: "Address: ",
                                       style: Utils.robotoRegular.copyWith(
-                                        color: Utils.primaryColor,
+                                        color: Utils.blackColor,
                                         fontWeight: FontWeight.w600,
                                       ),
                                       children: [
@@ -170,7 +170,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                     text: TextSpan(
                                       text: "Ratings: ",
                                       style: Utils.robotoRegular.copyWith(
-                                        color: Utils.primaryColor,
+                                        color: Utils.blackColor,
                                         fontWeight: FontWeight.w600,
                                       ),
                                       children: [
@@ -219,7 +219,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                                   text: TextSpan(
                                       text: "Review: ",
                                       style: Utils.robotoRegular.copyWith(
-                                        color: Utils.primaryColor,
+                                        color: Utils.blackColor,
                                         fontWeight: FontWeight.w600,
                                       ),
                                       children: [
@@ -251,7 +251,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                       Text(
                         "Overview",
                         style: Utils.robotoRegular.copyWith(
-                          color: Utils.primaryColor,
+                          color: Utils.blackColor,
                           fontSize: 18.6,
                           fontWeight: FontWeight.w600,
                         ),
@@ -264,7 +264,7 @@ class _DetailRestaurantScreenState extends State<DetailRestaurantScreen> {
                               child: Text(
                                 "No image yet",
                                 style: Utils.robotoRegular.copyWith(
-                                  color: Utils.whiteColor,
+                                  color: Utils.blackColor,
                                   fontSize: 18.6,
                                   fontWeight: FontWeight.w300,
                                 ),

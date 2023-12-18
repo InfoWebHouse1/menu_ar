@@ -4,6 +4,7 @@ import 'package:menu_ar/utills/App%20Routes/app_routes.dart';
 import 'package:menu_ar/utills/utills.dart';
 import 'package:menu_ar/view/Home/home_screen.dart';
 import 'package:menu_ar/view/Home/qr_view.dart';
+import 'package:menu_ar/view/Home/result_screen.dart';
 import 'package:menu_ar/view/Profile/profile_screen.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
@@ -21,6 +22,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     return [
       HomeScreen(),
       const QRViewScreen(),
+      //ResultTextScreen(),
       ProfileScreen(
         currentUserID: FirebaseAuth.instance.currentUser!.uid,
       ),
@@ -29,9 +31,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        return Future.value(false);
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        Navigator.of(context).pop();
+        return;
       },
       child: PersistentTabView(
         context,
@@ -42,14 +46,14 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           borderRadius: BorderRadius.circular(1),
         ),
         navBarHeight: 60,
-        backgroundColor: Utils.secondaryColor,
+        backgroundColor: Utils.bottomBarColor,
         items: [
           PersistentBottomNavBarItem(
             icon: const Icon(
               Icons.home_filled,
-              color: Utils.primaryColor,
+              color: Utils.whiteColor,
             ),
-            inactiveIcon: const Icon(Icons.home_filled, color: Utils.whiteColor),
+            inactiveIcon: const Icon(Icons.home_filled, color: Utils.secondaryColor),
             contentPadding: 10,
             routeAndNavigatorSettings: RouteAndNavigatorSettings(
               routes: AppRoutes.routes,
@@ -61,15 +65,15 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
                 Icons.document_scanner,
                 color: Utils.primaryColor,
               ),
-              inactiveIcon: const Icon(Icons.document_scanner, color: Utils.primaryLightColor),
+              inactiveIcon: const Icon(Icons.document_scanner, color: Utils.secondaryColor),
               contentPadding: 10,
               routeAndNavigatorSettings: RouteAndNavigatorSettings(routes: AppRoutes.routes)),
           PersistentBottomNavBarItem(
               icon: const Icon(
                 Icons.person_outlined,
-                color: Utils.primaryColor,
+                color: Utils.whiteColor,
               ),
-              inactiveIcon: const Icon(Icons.person_outlined, color: Utils.whiteColor),
+              inactiveIcon: const Icon(Icons.person_outlined, color: Utils.secondaryColor),
               contentPadding: 10,
               routeAndNavigatorSettings: RouteAndNavigatorSettings(routes: AppRoutes.routes)),
         ],

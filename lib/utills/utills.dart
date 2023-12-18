@@ -12,16 +12,30 @@ class Utils {
   ///Firebase Document Ref
   final userRef = FirebaseFirestore.instance.collection("Users");
 
+  // /// colors
+  // static const primaryColor = Color(0xFF9D432C);
+  // static const primaryLightColor = Color(0xFFCDA788);
+  // static const secondaryColor = Color(0xFFDB7B50);
+  // static const backgroundColor = Color(0xFFEDD6C4);
+  // static const blackColor = Color(0xFF000000);
+  // static const whiteColor = Colors.white;
+  // static const blueColor = Color(0XFF1886E7);
+  // static const redColor = Color(0XFFBE2020);
+  // static const lightRedColor = Color(0XFFFF5454);
   /// colors
-  static const primaryColor = Color(0xFF9D432C);
+  static const primaryColor = Color(0xFFcc0000);
+  static const appBarColor = Color(0xFFcc0000);
+  static const bottomBarColor = Color(0xFFcc0000);
   static const primaryLightColor = Color(0xFFCDA788);
-  static const secondaryColor = Color(0xFFDB7B50);
-  static const backgroundColor = Color(0xFFEDD6C4);
+  static const secondaryColor = Color(0XFFeeeeee);
+  static const backgroundColor = Color(0xFFf8f8f8);
   static const blackColor = Color(0xFF000000);
   static const whiteColor = Colors.white;
   static const blueColor = Color(0XFF1886E7);
   static const redColor = Color(0XFFBE2020);
   static const lightRedColor = Color(0XFFFF5454);
+  static const leftBoxColor = Color(0XFFeeeeee);
+  static const rightBoxColor = Color(0XFFee0000);
 
   /// Slider
   static String imgSlider1 = "assets/images/1.jpg";
@@ -52,21 +66,21 @@ class Utils {
   static String sandwichImg = "assets/images/club_sandwich.png";
   static String sandwichModel =
       "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_2721833_Loaf%2Bof%2BBread.glb?alt=media&token=6c6f2c85-eeeb-4c48-80c6-0e37a07ea2bd&_gl=1*17zi558*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTE0MzMxMS40LjEuMTY5OTE0MzMyMy40OC4wLjA.";
-  static String cheeseBurgerImg = "assets/images/cheese_burger.PNG";
+  static String cheeseBurgerImg = "assets/images/deal.PNG";
   static String cheeseBurgerModel =
-      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4201950_cheesburger.glb?alt=media&token=8473a848-ef73-4a71-9859-dceb7fb855d8&_gl=1*ubclx9*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyODcyMy4zNC4wLjA.";
-  static String donutImg = "assets/images/donut.PNG";
-  static String donutModel =
-      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4100258_donut21.glb?alt=media&token=ca4b81fc-1b79-403d-8044-b87247055aa6&_gl=1*11vr86f*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyODg5OS42MC4wLjA.";
-  static String doublePettyBurgerImg = "assets/images/double_petty_burger.PNG";
+      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/deal.glb?alt=media&token=d31b70dc-d495-4d96-9d5c-eab48d83e1c5";
+  static String dealImg = "assets/images/deal1.PNG";
+  static String dealModel =
+      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/mcdonalds_lunch.glb?alt=media&token=c0203554-1179-4992-9bbe-cf6c62ac2a4f";
+  static String doublePettyBurgerImg = "assets/images/pettyBurger.PNG";
   static String doublePettyBurgerModel =
-      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_2465920_burger_merged.glb?alt=media&token=43e1d64f-e868-4cf0-8794-156b79c4fddb&_gl=1*ykk2ty*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTEzNTQ0Ni4yLjEuMTY5OTEzNTQ2MS40NS4wLjA.";
+      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/king.glb?alt=media&token=061f2ac2-3bef-4d2b-a6d2-1405b28044ae";
   static String coffeeCupImg = "assets/images/coffee_cup.PNG";
   static String coffeeCupModel =
       "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/Paper%20cup.glb?alt=media&token=e85b99dd-456c-40ee-9b9d-3d91b6b793a7&_gl=1*1p6bu9p*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyOTI0My41MC4wLjA.";
-  static String hotDogImg = "assets/images/hot_dog.PNG";
-  static String hotDogModel =
-      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/uploads_files_4197508_untitled.glb?alt=media&token=980fcb8c-c235-40b6-9f63-5e55a73e4646&_gl=1*1l4tt4o*_ga*MTc0MDM1NDc5MC4xNjk5MTMwMzg3*_ga_CW55HF8NVT*MTY5OTMyNzY2Ny41LjEuMTY5OTMyOTExMC42MC4wLjA.";
+  static String pizzaImg = "assets/images/pizza.PNG";
+  static String pizzaModel =
+      "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/pizza.glb?alt=media&token=ffed66cb-020b-4451-9b9a-74cfa019b21d";
 
   /// qr Code
   static String qrScanCode = "https://firebasestorage.googleapis.com/v0/b/menu-ar-52c3a.appspot.com/o/AR%20Menu.pdf?alt=media&token=4f3dda73-7b44-4979-b3f9-898fe663a483";

@@ -27,11 +27,11 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Utils.secondaryColor,
+        backgroundColor: Utils.appBarColor,
         title: Text(
           "Profile",
           style: Utils.robotoRegular.copyWith(
-            color: Utils.primaryColor,
+            color: Utils.blackColor,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -55,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                           flex: 1,
                           child: Shimmer.fromColors(
                             baseColor: Utils.whiteColor,
-                            highlightColor: Utils.primaryLightColor.withOpacity(0.3),
+                            highlightColor: Utils.primaryColor.withOpacity(0.3),
                             child: const CircleAvatar(
                               backgroundColor: Utils.whiteColor,
                               radius: 60,
@@ -102,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
                     //todo: Privacy Policy Button
                     Shimmer.fromColors(
                       baseColor: Utils.whiteColor,
-                      highlightColor: Utils.primaryLightColor.withOpacity(0.3),
+                      highlightColor: Utils.primaryColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
@@ -115,7 +115,7 @@ class ProfileScreen extends StatelessWidget {
                     //todo: Help Button
                     Shimmer.fromColors(
                       baseColor: Utils.whiteColor,
-                      highlightColor: Utils.primaryLightColor.withOpacity(0.3),
+                      highlightColor: Utils.primaryColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
@@ -128,7 +128,7 @@ class ProfileScreen extends StatelessWidget {
                     //todo: About Button
                     Shimmer.fromColors(
                       baseColor: Utils.whiteColor,
-                      highlightColor: Utils.primaryLightColor.withOpacity(0.3),
+                      highlightColor: Utils.primaryColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
@@ -141,7 +141,7 @@ class ProfileScreen extends StatelessWidget {
                     //todo: Logout Button
                     Shimmer.fromColors(
                       baseColor: Utils.whiteColor,
-                      highlightColor: Utils.primaryLightColor.withOpacity(0.3),
+                      highlightColor: Utils.primaryColor.withOpacity(0.3),
                       child: Container(
                         height: 40,
                         width: width,
@@ -169,7 +169,7 @@ class ProfileScreen extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: CircleAvatar(
-                          backgroundColor: Utils.primaryLightColor,
+                          backgroundColor: Utils.primaryColor.withOpacity(0.8),
                           radius: 60,
                           child: SizedBox(
                             width: user.imageUrl! == "" ? 100 : 110,

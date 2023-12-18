@@ -89,7 +89,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                   }
                 },
                 icon: const Icon(Icons.comment),
-                color: Utils.primaryLightColor),
+                color: Utils.primaryColor),
           ),
           const Divider(),
           Expanded(
@@ -120,7 +120,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                       TextSpan(
                                         text: "\t\t\t${data["email"]}",
                                         style: Utils.robotoRegular.copyWith(
-                                          color: Utils.backgroundColor,
+                                          color: Utils.primaryColor.withOpacity(0.8),
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
@@ -131,7 +131,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   "${data["comment"]}",
                                   style: Utils.robotoRegular.copyWith(
                                     fontWeight: FontWeight.w300,
-                                    color: Utils.primaryLightColor,
+                                    color: Utils.blackColor,
                                   ),
                                 ),
                                 trailing: RatingBar.builder(
